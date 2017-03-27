@@ -1,0 +1,132 @@
+<!--
+Author: Matthew Lane (200214586)
+DOC: 01/02/2017
+Purpose: A To Do List program, written in HTML and JS to be run on an android emulator (cordova).
+File: This is the Index area of the application. The main page is here, and the GUI is placed. 
+-->
+
+<!DOCTYPE html>
+<html> 
+    <head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+
+        <title>Task List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+        
+    </head>
+
+<body>
+    <!-- Set up the list page -->
+    <div data-role="page" id="list">
+        <div data-role="main" id="content" class="ui-content">
+
+            <!-- Display box -->
+            <input type="text" id="display" class="resultBox" name="display" placeholder="Your task">
+            <table>
+                <tr>
+                    <!-- The Add Task Button -->
+                    <td><input type="button" value="Add" class="ui-responsive ui-shadow" id="Add"></td>
+                </tr>
+            </table>
+
+            <form id="mainForm" name="calculator">
+
+                <!-- To Do Placeholders -->
+                <!-- These are the blank buttons in the app, ready to recieve tasks. They are also the Finished task, and Remove task buttons. -->
+ 
+
+                <table data-role="table" class="ui-responsive" table border="1">
+                    <thead>
+                        <tr>
+                            <th>Tasks</th>
+                            <th>Done</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="listItem" id="ToDo0" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done0" /></td>
+                            <td><input type="button" value="X" class="ui-responsive ui-shadow" id="remove0" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo1" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done1" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove1" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo2" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done2" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove2" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo3" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done3" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove3" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo4" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done4" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove4" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo5" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done5" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove5" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo6" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done6" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove6" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo7" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done7" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove7" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo8" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done8" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove8" ></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#details"><input type="text" value="" class="toDoItem" id="ToDo9" readonly="readonly"></a></td>
+                            <td><input type="checkbox" value="" class="FinishedTask" id="Done9" /></td>
+                            <td><input type="button" value="X" class="removeToDo" id="remove9" ></td>
+                        </tr>
+</table>
+</form>
+        </div>
+    </div>
+
+
+    
+    <!--Start of the Details Page !-->
+    <div data-role="page" id="details">
+        <div data-role="main" id="DetailsContent" class="ui-content">
+            <div>
+                <table>
+                    <tr>
+                        <td><input type="text" value="" class="listItem" id="ToDoDetails"></td>
+                        <td><input type="button" value="Add" class="ui-responsive ui-shadow" id="AddDetails"></td>
+                    </tr>
+                </table>
+                    
+                <span id="detailsSpan"></span>
+               
+            </div>
+
+            <a href="#list">Back to Task List</a>
+        </div>
+   </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+        <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
